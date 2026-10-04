@@ -14,6 +14,7 @@ export class TaskItemComponent {
   @Input({ required: true }) task!: Task;
 
   isEditing = signal(false);
+  isConfirmingDelete = signal(false);
 
   constructor(
     private taskService: TaskService,
@@ -41,8 +42,17 @@ export class TaskItemComponent {
     this.toastService.show('Task updated');
   }
 
-  remove(): void {
+  askDelete(): void {
+    this.isConfirmingDelete.set(true);
+  }
+
+  cancelDelete(): void {
+    this.isConfirmingDelete.set(false);
+  }
+
+  confirmDelete(): void {
     this.taskService.deleteTask(this.task.id);
+    this.isConfirmingDelete.set(false);
     this.toastService.show('Task deleted');
   }
 }
