@@ -1,0 +1,12 @@
+<section class="form-card">
+  <h2 class="section-heading">Add New Task</h2>
+  <form class="task-form" (submit)="onAdd($event, titleInput)">
+    <input #titleInput type="text" placeholder="What do you need to do?" autocomplete="off" />
+    <button type="submit" class="btn-lime">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 3V13M3 8H13" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
+      Add Task
+    </button>
+  </form>
+</section>

@@ -1,0 +1,155 @@
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.055);
+  border-radius: 10px;
+  padding: 12px 14px;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  &.completed .title {
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.38);
+  }
+
+  .check {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    svg {
+      width: 13px;
+      height: 13px;
+      color: var(--ink);
+    }
+  }
+
+  &.completed .check {
+    background: var(--lime);
+    border-color: var(--lime);
+  }
+
+  .title {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  .actions {
+    display: flex;
+    gap: 4px;
+
+    .icon-btn {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      border-radius: 6px;
+      color: rgba(255, 255, 255, 0.6);
+      transition: background 0.12s ease, color 0.12s ease;
+
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--white);
+      }
+
+      &.danger:hover {
+        color: #ff9d9d;
+      }
+    }
+  }
+}
+
+.edit-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 400;
+  padding: 20px;
+}
+
+.edit-modal {
+  background: var(--forest-light);
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+
+  h3 {
+    font-family: 'Zalando Sans Expanded', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--white);
+    margin: 0 0 16px;
+  }
+
+  .edit-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1.5px solid var(--lime);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-family: 'Zalando Sans Expanded', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--white);
+    outline: none;
+    margin-bottom: 18px;
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    button {
+      border: none;
+      border-radius: 8px;
+      padding: 9px 16px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .btn-cancel {
+      background: transparent;
+      color: rgba(255, 255, 255, 0.65);
+
+      &:hover {
+        color: var(--white);
+      }
+    }
+
+    .btn-save {
+      background: var(--lime);
+      color: var(--ink);
+
+      &:hover {
+        opacity: 0.88;
+      }
+    }
+  }
+}

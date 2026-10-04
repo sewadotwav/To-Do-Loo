@@ -1,0 +1,47 @@
+.task-section {
+  background: var(--forest-light);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 14px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 28px 0;
+  color: rgba(255, 255, 255, 0.35);
+
+  svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.55);
+  }
+}
+
+.empty-inline {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.45);
+}
